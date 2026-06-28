@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supergirl: Woman of Tomorrow (2026) — Review</title>
+    <style>
+        :root {
+            /* Clean, modern dark cinematic palette */
+            --bg-main: #090d16;
+            --bg-surface: #121824;
+            --accent-gold: #f59e0b;
+            --accent-crimson: #e11d48;
+            --text-heading: #ffffff;
+            --text-body: #cbd5e1; /* Off-white for reduced eye strain during long reads */
+            --text-muted: #64748b;
+            --border-subtle: #1e293b;
+            
+            /* Typography Scale optimized for deep reading */
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--bg-main); 
+            color: var(--text-body); 
+            font-family: var(--font-stack);
+            font-size: 18px; 
+            line-height: 1.8; 
+            letter-spacing: -0.01em;
+            padding: 60px 24px;
+        }
+
+        .review-wrapper { 
+            max-width: 720px; /* Golden width for text legibility (60-70 characters per line) */
+            margin: 0 auto; 
+        }
+
+        /* 1. Article Header & Title */
+        .article-header { 
+            margin-bottom: 36px; 
+        }
+        .editorial-label { 
+            font-size: 12px; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            color: var(--accent-gold); 
+            letter-spacing: 2px; 
+            display: block;
+            margin-bottom: 12px;
+        }
+        .article-title { 
+            font-size: 42px; 
+            font-weight: 900; 
+            line-height: 1.2; 
+            color: var(--text-heading);
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+        .byline { 
+            font-size: 14px; 
+            color: var(--text-muted); 
+        }
+        .byline strong { color: var(--text-heading); }
+
+        /* 2. Legally Protected Media Block */
+        .media-container { 
+            margin-bottom: 40px; 
+        }
+        .featured-image { 
+            width: 100%; 
+            height: auto; 
+            max-height: 480px;
+            object-fit: cover; 
+            border-radius: 8px; 
+            border: 1px solid var(--border-subtle);
+        }
+        .media-attribution { 
+            font-size: 12px; 
+            color: var(--text-muted); 
+            margin-top: 8px; 
+            font-style: italic;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 3. Summary Scoreboard Box */
+        .summary-deck { 
+            background-color: var(--bg-surface); 
+            border: 1px solid var(--border-subtle); 
+            border-radius: 12px; 
+            padding: 28px; 
+            margin-bottom: 44px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 32px;
+            align-items: center;
+        }
+        .master-score-box { 
+            text-align: center; 
+            border-right: 1px solid var(--border-subtle); 
+            padding-right: 12px;
+        }
+        .score-value { 
+            font-size: 64px; 
+            font-weight: 900; 
+            color: var(--accent-gold); 
+            line-height: 1;
+            font-family: monospace;
+        }
+        .score-scale { font-size: 16px; color: var(--text-muted); font-weight: normal; }
+        .score-label { 
+            font-size: 11px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            color: var(--text-muted);
+            margin-top: 8px;
+            display: block;
+        }
+        .summary-text-teaser { 
+            font-size: 16px; 
+            color: #f1f5f9; 
+            font-weight: 500;
+        }
+
+        /* 4. Main Text Body Setup */
+        .parameter-section { 
+            margin-bottom: 40px; 
+        }
+        .parameter-title { 
+            font-size: 22px; 
+            font-weight: 800; 
+            color: var(--text-heading); 
+            margin-bottom: 14px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 8px;
+        }
+        .parameter-rating {
+            font-family: monospace;
+            font-size: 16px;
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .parameter-section p { 
+            margin-bottom: 20px; 
+        }
+
+        /* Editorial Verdict Box */
+        .final-verdict-box {
+            background: linear-gradient(180deg, rgba(225, 29, 72, 0.02) 0%, rgba(225, 29, 72, 0.07) 100%);
+            border: 1px solid rgba(225, 29, 72, 0.2);
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 48px;
+        }
+        .verdict-heading {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--accent-crimson);
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .verdict-body {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* 5. Legal Safe Harbor Footer */
+        .legal-footer { 
+            margin-top: 80px; 
+            border-top: 1px solid var(--border-subtle); 
+            padding-top: 24px; 
+            font-size: 12px; 
+            color: var(--text-muted); 
+            line-height: 1.6;
+        }
+        .legal-footer a { color: var(--text-body); text-decoration: none; border-bottom: 1px dashed var(--text-muted); }
+        .legal-footer p { margin-bottom: 12px; }
+    </style>
+</head>
+<body>
+
+<div class="review-wrapper">
+
+    <!-- 1. TITLE & META -->
+    <header class="article-header">
+        <span class="editorial-label">Unbiased Review</span>
+        <h1 class="article-title">Supergirl: Woman of Tomorrow — Beautiful Outside, Hollow Inside</h1>
+        <div class="byline">Written by <strong>Staff Critic</strong> • Published June 28, 2026</div>
+    </header>
+
+    <!-- 2. COMMERCIALLY & LEGALLY USABLE IMAGE -->
+    <figure class="media-container">
+        <!-- Sourced using promotional press-kit material under Fair Use guidelines -->
+        <img class="featured-image" src="https://preview.redd.it/supergirl-woman-of-tomorrow-updated-with-milly-alcock-v0-jh7r9fg4phfc1.jpeg?width=1080&crop=smart&auto=webp&s=510f93006d4a7d40cc301119c210442caf7e5b70" alt="Official promotional artwork of Milly Alcock as Supergirl">
+        <figcaption class="media-attribution">
+            <span>Image Source: DC Studios Promotional Press Asset</span>
+            <span>Educational Evaluation & Critique Category</span>
+        </figcaption>
+    </figure>
+
+    <!-- 3. SUMMARY DECK (10-POINT RATING) -->
+    <section class="summary-deck">
+        <div class="master-score-box">
+            <div class="score-value">5.5<span class="score-scale">/10</span></div>
+            <span class="score-label">Overall Score</span>
+        </div>
+        <div class="summary-text-teaser">
+            Despite a fiercely accurate performance from Milly Alcock and some breathtaking space visuals, Supergirl gets heavily weighed down by forced cinematic universe setup and structural pacing issues in its second half.
+        </div>
+    </section>
+
+    <!-- 4. MAIN BODY CHOPPED BY INDEPENDENT FILMMAKING PARAMETERS -->
+    <main>
+        <section class="parameter-section">
+            <h2 class="parameter-title">1. Story & Writing <span class="parameter-rating">5.0/10</span></h2>
+            <p>The core narrative architecture attempts to transform a beloved, gritty space-western comic journey onto the silver screen. While the structural setup feels promising, the narrative drops the ball in mid-journey transitions. Instead of natural character progression, the screenplay over-relies on characters shouting their exact emotional backstories out loud to ensure casual moviegoers stay caught up.</p>
+            <p>Worse yet, the independent value of this specific film is compromised by forced narrative interruptions meant exclusively to lay track for future sequels and structural cinematic crossovers.</p>
+        </section>
+
+        <section class="parameter-section">
+            <h2 class="parameter-title">2. Directing & Visuals <span class="parameter-rating">6.5/10</span></h2>
+            <p>The structural layout of the visuals is a fascinating battleground. On one side, the aesthetic direction of foreign worlds breaks away cleanly from standard, desaturated blockbusters, leveraging rich, vibrant color harmonies. Several landscape wide shots capture a genuine epic scope.</p>
+            <p>However, the execution stumbles when blending real environments with virtual production tools. The light balance frequently feels disconnected from the digital sets behind the cast, revealing obvious boundaries that momentarily dissolve audience immersion.</p>
+        </section>
+
+        <section class="parameter-section">
+            <h2 class="parameter-title">3. Acting & Chemistry <span class="parameter-rating">6.0/10</span></h2>
+            <p>Milly Alcock anchors the production with immense commitment, successfully rendering a hardened, deeply complex hero shaped by tragedy. She plays the role with an emotional weight that gives the story immediate presence.</p>
+            <p>The weak link stems from the ensemble balance. The direct chemistry variables with supporting costars fall flat, leaving the critical final act lacking the raw human stakes required to land its emotional climax seamlessly.</p>
+        </section>
+
+        <section class="parameter-section">
+            <h2 class="parameter-title">4. Pacing, Sound & Effects <span class="parameter-rating">4.5/10</span></h2>
+            <p>Post-production structural cutting compromises the movie's natural momentum, leaving it bloated at over two hours. Action sequences suffer from high-frequency editing choices, making spatial clarity a distinct mess during heavy combat scenes.</p>
+            <p>Auditory elements feel explicitly designed by corporate tracking metrics rather than artistic merit, injecting distracting musical cues that break tone. The visual effect assets additionally present distinct signs of rushed production timelines as the climax devolves into a hazy sandbox of digital noise.</p>
+        </section>
+
+        <!-- Final Verdict Summary Callout -->
+        <div class="final-verdict-box">
+            <span class="verdict-heading">The Bottom Line</span>
+            <p class="verdict-body">Do not let the unified media echo chamber deceive you. Supergirl is a thoroughly average blockbuster asset that squanders its leading talent inside a calculated franchise template. Wait for the digital streaming window.</p>
+        </div>
+    </main>
+
+    <!-- 5. LEGAL SAFE-HARBOR DISCLAIMERS & CONTACT -->
+    <footer class="legal-footer">
+        <p><strong>Copyright &amp; Fair Use Notice:</strong> This website publishes original, critical movie reviews containing commentary, analysis, and educational evaluations of creative works. Images, screenshots, and promotional poster designs displayed here are utilized strictly under the <strong>Fair Use Doctrine</strong> (U.S. Copyright Act Title 17, Section 107) and international fair dealing provisions. No copyright infringement is intended.</p>
+        <p><strong>Content Takedowns:</strong> If you are the legal copyright holder of an asset utilized here and object to its inclusion, please contact our dedicated compliance handler at <a href="mailto:takedowns@yourdomain.com">takedowns@yourdomain.com</a> with proper ownership documentation for immediate review and removal. We actively maintain a clean, collaborative relationship with creators and studios.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
