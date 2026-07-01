@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="LQrYOrkY5MA29hc3yXpovp3Uc2M4kb3BDS9LM2ewRhU" />
-    <meta name="description" content="Uncompromising, unfiltered movie reviews. Teardowns of massive box-office hype, and honest praise for cinema that actually delivers.">
-    <title>Overhyped Flicks — Unfiltered Movie Reviews</title>
+    <meta name="description" content="Uncompromising, unfiltered movie reviews. Side-by-side comparisons of artificial box-office hype versus genuine cinematic masterpieces.">
+    <title>Overhyped Flicks — The Editorial Split</title>
     <style>
         :root {
             --bg-main: #090d16;
             --bg-surface: #121824;
             --accent-gold: #f59e0b;
             --accent-crimson: #e11d48;
-            --accent-emerald: #10b981; /* Fresh color variable for appreciated films */
+            --accent-emerald: #10b981;
             --text-heading: #ffffff;
             --text-body: #cbd5e1;
             --text-muted: #64748b;
@@ -28,71 +28,50 @@
             font-family: var(--font-stack);
             font-size: 16px; 
             line-height: 1.6; 
-            padding: 80px 24px;
+            padding: 60px 24px;
         }
 
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
 
-        /* Branding Header */
-        .site-header {
+        header class="site-header" {
             text-align: center;
-            margin-bottom: 64px;
+            margin-bottom: 48px;
             border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 32px;
+            padding-bottom: 24px;
         }
         .site-title {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 900;
             letter-spacing: -0.04em;
             color: var(--text-heading);
             text-transform: uppercase;
         }
-        .site-title span {
-            color: var(--accent-crimson);
-        }
-        .site-tagline {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-top: 8px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        .site-title span { color: var(--accent-crimson); }
+        .site-tagline { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+
+        /* THE HORIZONTAL SPLIT GRID */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
         }
 
-        /* Section Layouts */
-        .feed-section {
-            margin-bottom: 56px;
-        }
-        .section-heading {
-            font-size: 14px;
+        .column-section { display: flex; flex-direction: column; gap: 20px; }
+        
+        .column-heading {
+            font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-subtle);
+            margin-bottom: 12px;
         }
-        .section-heading::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border-subtle);
-        }
-        .heading-overhyped { color: var(--accent-crimson); }
-        .heading-worthy { color: var(--accent-emerald); }
+        .heading-overhyped { color: var(--accent-crimson); border-color: rgba(225, 29, 72, 0.3); }
+        .heading-gems { color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3); }
 
-        /* Review Feed Grid */
-        .review-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        /* Universal Review Card Link Wrapper */
+        /* REVIEW CARDS */
         .review-card {
             background-color: var(--bg-surface);
             border: 1px solid var(--border-subtle);
@@ -100,7 +79,7 @@
             padding: 24px;
             display: grid;
             grid-template-columns: auto 1fr;
-            gap: 24px;
+            gap: 20px;
             align-items: center;
             text-decoration: none;
             color: inherit;
@@ -108,13 +87,13 @@
         }
         .review-card:hover {
             transform: translateY(-2px);
-            border-color: #2e3e56;
         }
+        .card-overhyped:hover { border-color: var(--accent-crimson); }
+        .card-gem:hover { border-color: var(--accent-emerald); }
 
-        /* Score Badges inside Cards */
         .card-score {
-            width: 70px;
-            height: 70px;
+            width: 64px;
+            height: 64px;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
@@ -122,124 +101,79 @@
             align-items: center;
             font-family: monospace;
             font-weight: 900;
-            line-height: 1;
         }
-        /* Specific Card Flavoring */
-        .score-bad {
-            background: rgba(225, 29, 72, 0.1);
-            border: 1px solid rgba(225, 29, 72, 0.2);
-            color: var(--accent-crimson);
-        }
-        .score-good {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: var(--accent-emerald);
-        }
-        
-        .score-num { font-size: 28px; }
+        .score-bad { background: rgba(225, 29, 72, 0.1); color: var(--accent-crimson); border: 1px solid rgba(225, 29, 72, 0.2); }
+        .score-good { background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .score-num { font-size: 24px; line-height: 1; }
         .score-denom { font-size: 11px; opacity: 0.6; }
 
-        /* Card Text Elements */
-        .card-meta {
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-        .card-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-heading);
-            line-height: 1.3;
-            margin-bottom: 8px;
-        }
-        .card-teaser {
-            font-size: 15px;
-            color: var(--text-body);
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            opacity: 0.85;
-        }
+        .card-meta { font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+        .card-title { font-size: 18px; font-weight: 700; color: var(--text-heading); margin-bottom: 6px; line-height: 1.3; }
+        .card-teaser { font-size: 14px; opacity: 0.8; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-        /* Minimalistic Footer */
         .site-footer {
-            margin-top: 100px;
+            margin-top: 80px;
             border-top: 1px solid var(--border-subtle);
             padding-top: 24px;
             text-align: center;
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
         }
 
-        /* Responsive Mobile Layout */
-        @media (max-width: 600px) {
-            body { padding: 48px 16px; }
-            .site-title { font-size: 30px; }
-            .review-card {
-                grid-template-columns: 1fr;
-                gap: 16px;
-                text-align: center;
-            }
-            .card-score { margin: 0 auto; }
+        /* Responsive Breakpoint */
+        @media (max-width: 850px) {
+            .dashboard-grid { grid-template-columns: 1fr; gap: 32px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-
     <header class="site-header">
         <h1 class="site-title">Overhyped<span>Flicks</span></h1>
-        <p class="site-tagline">Teardowns of manufactured blockbusters, and rare praise for the cinematic efforts that actually deserve it.</p>
+        <p class="site-tagline">Uncompromising analysis tracking the massive gap between modern marketing hype and artistic delivery.</p>
     </header>
 
-    <main>
-        <section class="feed-section">
-            <h2 class="section-heading heading-overhyped">The Chopping Block</h2>
-            <div class="review-grid">
-                
-                <a href="./supergirl-2026/" class="review-card">
-                    <div class="card-score score-bad">
-                        <span class="score-num">2</span>
-                        <span class="score-denom">/10</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">June 2026 • Movie Review</div>
-                        <h3 class="card-title">Supergirl: Woman of Tomorrow — Flop of Today</h3>
-                        <p class="card-teaser">The superhero genre does not demand much in terms of script. Supergirl proves that even this low bar can sometimes be too high.</p>
-                    </div>
-                </a>
-                
+    <main class="dashboard-grid">
+        <section class="column-section">
+            <h2 class="column-heading heading-overhyped">The Chopping Block</h2>
+            
+            <a href="./overhyped/supergirl.html" class="review-card card-overhyped">
+                <div class="card-score score-bad"><span class="score-num">2</span><span class="score-denom">/10</span></div>
+                <div class="card-content">
+                    <div class="card-meta">June 2026 • Movie Review</div>
+                    <h3 class="card-title">Supergirl: Woman of Tomorrow — Flop of Today</h3>
+                    <p class="card-teaser">The superhero genre does not demand much in terms of script. Supergirl proves that even this low bar can sometimes be too high.</p>
                 </div>
+            </a>
+
+            <a href="./overhyped/backrooms.html" class="review-card card-overhyped">
+                <div class="card-score score-bad"><span class="score-num">3</span><span class="score-denom">/10</span></div>
+                <div class="card-content">
+                    <div class="card-meta">May 2026 • Movie Review</div>
+                    <h3 class="card-title">Backrooms (2026) — A Creepypasta Stretched Beyond Its Limits</h3>
+                    <p class="card-teaser">A24 expands a brilliant 5-minute YouTube video into a sleep-inducing, yellow-tinted commercial waiting room simulation.</p>
+                </div>
+            </a>
         </section>
 
-        <section class="feed-section">
-            <h2 class="section-heading heading-worthy">Credit Due</h2>
-            <div class="review-grid">
-                
-                <div class="review-card" style="opacity: 0.4; cursor: default; pointer-events: none;">
-                    <div class="card-score score-good">
-                        <span class="score-num">8</span>
-                        <span class="score-denom">/10</span>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">Coming Soon • Movie Review</div>
-                        <h3 class="card-title">A Masterpiece Deserving of the Hype</h3>
-                        <p class="card-teaser">This space is reserved for films that deliver outstanding scriptwriting, visual execution, and true artistic value.</p>
-                    </div>
-                </div>
+        <section class="column-section">
+            <h2 class="column-heading heading-gems">Credit Due</h2>
 
-            </div>
+            <a href="./gems/the-prestige.html" class="review-card card-gem">
+                <div class="card-score score-good"><span class="score-num">9.5</span><span class="score-denom">/10</span></div>
+                <div class="card-content">
+                    <div class="card-meta">Retro Review • Masterpiece</div>
+                    <h3 class="card-title">The Prestige (2006) — The Ultimate Narrative Magic Trick</h3>
+                    <p class="card-teaser">Christopher Nolan's relentless obsession with obsession itself results in a tightly wound structural masterclass that rewards endless rewatches.</p>
+                </div>
+            </a>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Overhyped Flicks. All reviews written strictly for educational, analytical, and critical critique.</p>
+        <p>&copy; 2026 Overhyped Flicks. All analytical critiques are published under Fair Use provisions.</p>
     </footer>
-
 </div>
 
 </body>
